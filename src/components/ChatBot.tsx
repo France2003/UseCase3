@@ -323,51 +323,51 @@ export const ChatBot: React.FC = () => {
       />
 
       <div className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
-        <header className="relative z-20 px-3 pt-2 md:px-6 md:pt-3">
+        <header className="relative z-20 px-3 pt-1 md:px-6 md:pt-2">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="hospitality-glass hospitality-hero rounded-[22px] px-4 py-3 md:px-5 md:py-3.5"
+            className="hospitality-glass hospitality-hero rounded-[20px] px-3 py-2.5 md:px-4 md:py-2.5"
           >
-            <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+            <div className="flex flex-col gap-2 xl:flex-row xl:items-center xl:justify-between">
               <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <div className="inline-flex items-center gap-2 rounded-xl border border-cyan-200/70 bg-white/90 p-1.5 pr-3 shadow-sm">
-                    <img src={LogoImage} alt="Logo" className="h-9 w-9 rounded-lg border border-cyan-100 object-cover" />
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 rounded-xl border border-cyan-200/70 bg-white/90 p-1.5 pr-2.5 shadow-sm">
+                    <img src={LogoImage} alt="Logo" className="h-8 w-8 rounded-lg border border-cyan-100 object-cover" />
                     <div className="leading-tight">
                       <p className="text-[11px] font-extrabold text-slate-800">Trung tâm điều hành phân tích</p>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-cyan-700">
                         Nền tảng trí tuệ nhân tạo
                       </p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-300/80 bg-cyan-50/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-700">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-300/80 bg-cyan-50/90 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-[0.13em] text-cyan-700">
                     <Sparkles size={12} /> Trí tuệ quyết định
                   </span>
                 </div>
 
-                <h1 className="mt-2 text-xl font-black leading-tight text-slate-900 md:text-2xl">
+                <h1 className="mt-1.5 text-lg font-black leading-tight text-slate-900 md:text-xl">
                   Tối ưu Ngành Khách sạn - Nhà hàng
                 </h1>
-                <p className="mt-1 text-sm font-semibold text-slate-600">
+                <p className="mt-1 text-[13px] font-semibold text-slate-600">
                   Biến dữ liệu thành quyết định, tập trung vào hiệu quả vận hành và lợi nhuận.
                 </p>
 
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2 py-0.5 text-[10px] font-semibold text-slate-700">
                     <Hotel size={12} className="text-cyan-700" /> Công suất phòng
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2 py-0.5 text-[10px] font-semibold text-slate-700">
                     <UtensilsCrossed size={12} className="text-amber-600" /> Biên lợi nhuận F&B
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/85 px-2 py-0.5 text-[10px] font-semibold text-slate-700">
                     <ShieldCheck size={12} className="text-emerald-600" /> Khuyến nghị theo dữ liệu
                   </span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-2 md:grid-cols-4 xl:w-[560px]">
+              <div className="grid grid-cols-2 gap-1.5 md:grid-cols-4 xl:w-[500px]">
                 {KPI_CARDS.map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -376,18 +376,18 @@ export const ChatBot: React.FC = () => {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.06 }}
-                      className="hospitality-kpi rounded-xl px-3 py-2"
+                      className="hospitality-kpi rounded-xl px-2.5 py-1.5"
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <p className="truncate text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-500">
+                        <p className="truncate text-[9px] font-semibold uppercase tracking-[0.08em] text-slate-500">
                           {item.label}
                         </p>
-                        <span className={`inline-flex h-6 w-6 items-center justify-center rounded-lg ${item.iconClass}`}>
-                          <Icon size={12} />
+                        <span className={`inline-flex h-5 w-5 items-center justify-center rounded-lg ${item.iconClass}`}>
+                          <Icon size={11} />
                         </span>
                       </div>
-                      <p className="mt-1 text-lg font-black text-slate-900 md:text-xl">{item.value}</p>
-                      <p className={`truncate text-[10px] font-semibold ${item.trendClass}`}>{item.note}</p>
+                      <p className="mt-0.5 text-base font-black text-slate-900 md:text-lg">{item.value}</p>
+                      <p className={`truncate text-[9px] font-semibold ${item.trendClass}`}>{item.note}</p>
                     </motion.div>
                   );
                 })}
@@ -396,8 +396,8 @@ export const ChatBot: React.FC = () => {
           </motion.div>
         </header>
 
-        <main className="scrollbar-thin relative z-10 flex-1 overflow-y-auto px-3 pb-2 pt-2 md:px-6 md:pb-3">
-          <div className="hospitality-chat-shell relative h-full w-full min-h-0 overflow-x-hidden rounded-[22px] px-3 py-4 md:px-5 md:py-4">
+        <main className="scrollbar-thin relative z-10 flex-1 overflow-y-auto px-3 pb-1 pt-1 md:px-6 md:pb-2">
+          <div className="hospitality-chat-shell relative h-full w-full min-h-0 overflow-x-hidden rounded-[22px] px-3 py-3 md:px-5 md:py-3">
             <div className="pointer-events-none absolute right-8 top-8 h-20 w-20 rounded-full bg-cyan-300/25 blur-2xl" />
             <div className="pointer-events-none absolute bottom-8 left-8 h-24 w-24 rounded-full bg-amber-300/20 blur-2xl" />
 
@@ -425,13 +425,13 @@ export const ChatBot: React.FC = () => {
           </div>
         </main>
 
-        <footer className="relative z-20 px-3 pb-3 md:px-6 md:pb-4">
+        <footer className="relative z-20 px-3 pb-2 md:px-6 md:pb-3">
           <div className="relative w-full">
-            <div className="mb-2 px-2">
+            <div className="mb-1.5 px-2">
               <FilePreview files={uploadedFiles} onRemove={id => setUploadedFiles(files => files.filter(file => file.id !== id))} />
             </div>
 
-            <div className="hospitality-input-shell flex items-end gap-2 rounded-[20px] px-2 py-2 md:px-3">
+            <div className="hospitality-input-shell flex items-end gap-2 rounded-[18px] px-2 py-1.5 md:px-2.5">
               <div className="mb-1 shrink-0">
                 <FileUploader onFilesUpload={files => setUploadedFiles(prev => [...prev, ...files])} />
               </div>
@@ -447,15 +447,15 @@ export const ChatBot: React.FC = () => {
                   }
                 }}
                 placeholder="Vui lòng nhập câu hỏi..."
-                className="max-h-28 min-h-[48px] flex-1 resize-none overflow-hidden border-none bg-transparent px-2 py-2.5 text-[15px] font-medium text-slate-700 outline-none placeholder:text-slate-400"
+                className="max-h-24 min-h-[42px] flex-1 resize-none overflow-hidden border-none bg-transparent px-2 py-2 text-[14px] font-medium text-slate-700 outline-none placeholder:text-slate-400"
               />
 
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() && !uploadedFiles.length}
-                className="group mr-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-gradient-to-br from-cyan-500 to-teal-600 text-white shadow-lg shadow-cyan-900/20 transition-all hover:-translate-y-0.5 hover:shadow-cyan-700/30 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-40"
+                className="group mr-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-gradient-to-br from-cyan-500 to-teal-600 text-white shadow-lg shadow-cyan-900/20 transition-all hover:-translate-y-0.5 hover:shadow-cyan-700/30 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-40"
               >
-                <Send size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <Send size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
             </div>
 
