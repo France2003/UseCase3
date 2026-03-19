@@ -1,48 +1,144 @@
+.hospitality-dashboard-bg {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.64), rgba(15, 23, 42, 0.52)),
+    url('./assets/images/bgr.png'),
+    radial-gradient(circle at 10% 10%, #fef3c7 0%, transparent 35%),
+    radial-gradient(circle at 90% 12%, #bfdbfe 0%, transparent 35%),
+    linear-gradient(125deg, #f8fafc 0%, #f1f5f9 44%, #ecfeff 100%);
+  background-size: cover, cover, auto, auto, auto;
+  background-position: center, center, center, center, center;
+  background-attachment: fixed, fixed, scroll, scroll, scroll;
+}
 
-.hospital-chat-pattern {
-  background-color: #f0f4f8;
-  background-image:  radial-gradient(#1e5b8d 0.5px, transparent 0.5px), radial-gradient(#1e5b8d 0.5px, #f0f4f8 0.5px);
-  background-size: 20px 20px;
-  background-position: 0 0,10px 10px;
-  opacity: 0.3;
+.hospitality-dashboard-bg::before {
+  content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(14, 116, 144, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 116, 144, 0.09) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at 50% 32%, black 52%, transparent 100%);
+  opacity: 0.32;
 }
-.hospital-chat-bg {
-  position: relative;
-  /* Hình nền bệnh viện 199 thực tế */
-  background-image: linear-gradient(rgba(241, 245, 249, 0.8), rgba(241, 245, 249, 0.8)), 
-                    url('http://suckhoe.thebank.vn/uploads/2021/03/05/thebank_bv_199_bo_cong_an_1614937128.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-/* Hiệu ứng kính mờ cho Header và Footer */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-}
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
-}
-/* Watermark lớn ở trung tâm */
-.hospital-watermark-center {
+
+.hospitality-dashboard-bg::after {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  background-image: url('https://benhvien199.vn/uploads/logo/logo.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 1;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -170px;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, rgba(14, 165, 233, 0.02) 72%);
+  animation: hospitality-float 9s ease-in-out infinite;
+}
+
+.hospitality-glass {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.hospitality-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hospitality-hero::before {
+  content: '';
+  position: absolute;
+  inset: -120% 0 0 -35%;
+  width: 220px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
+  transform: rotate(15deg);
+  animation: hospitality-scan 5.5s linear infinite;
+  opacity: 0.45;
+}
+
+.hospitality-kpi {
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.9));
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  box-shadow: 0 12px 30px rgba(3, 105, 161, 0.12);
+}
+
+.hospitality-chat-shell {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  backdrop-filter: blur(12px);
+}
+
+.hospitality-input-shell {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(125, 211, 252, 0.45);
+  box-shadow: 0 10px 32px rgba(14, 116, 144, 0.15);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hospitality-input-shell:focus-within {
+  border-color: rgba(6, 182, 212, 0.7);
+  box-shadow: 0 16px 38px rgba(6, 182, 212, 0.22);
+}
+
+.hospitality-pulse-dot {
+  animation: hospitality-pulse 1.6s ease-in-out infinite;
+}
+
+.markdown-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.hospitality-chat-shell table {
+  width: 100%;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9, #0d9488);
+  border-radius: 999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+@keyframes hospitality-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(16px) translateX(-12px);
+  }
+}
+
+@keyframes hospitality-scan {
+  0% {
+    transform: translateX(-230px) rotate(15deg);
+  }
+  100% {
+    transform: translateX(740px) rotate(15deg);
+  }
+}
+
+@keyframes hospitality-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }

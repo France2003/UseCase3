@@ -32,12 +32,12 @@ export const FileUploader: React.FC<Props> = ({ onFilesUpload }) => {
         className="hidden"
         ref={fileInputRef}
         onChange={handleChange}
-        accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.json,.pptx,.txt,.csv"
+        accept="image/*,.pdf,.docx,.txt,.csv,.xlsx,.xls"
       />
       <button
         type="button"
         onClick={() => fileInputRef.current?.click()}
-        className="p-2.5 text-slate-500 hover:text-[#1e5b8d] hover:bg-white rounded-full transition-all shrink-0"
+        className="shrink-0 rounded-full border border-cyan-100 p-2.5 text-slate-500 transition-all hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700"
       >
         <Paperclip size={22} />
       </button>

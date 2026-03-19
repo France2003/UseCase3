@@ -13,18 +13,18 @@ export const FilePreview: React.FC<Props> = ({ files, onRemove }) => {
   return (
     <div className="flex flex-wrap gap-2 mb-3">
       {files.map((file) => (
-        <div key={file.id} className="group relative flex items-center gap-2 p-1.5 bg-white border border-blue-100 rounded-lg shadow-sm">
-          <div className="w-8 h-8 flex items-center justify-center rounded bg-blue-50 overflow-hidden">
+        <div key={file.id} className="group relative flex items-center gap-2 rounded-xl border border-cyan-100 bg-white/95 p-1.5 shadow-sm">
+          <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded bg-cyan-50">
             {file.type === 'image' && file.preview ? (
               <img src={file.preview} alt="" className="w-full h-full object-cover" />
             ) : (
-              <FileText size={16} className="text-[#1e5b8d]" />
+              <FileText size={16} className="text-cyan-700" />
             )}
           </div>
-          <span className="text-[11px] font-medium text-slate-600 truncate max-w-[120px]">{file.name}</span>
+          <span className="max-w-[120px] truncate text-[11px] font-medium text-slate-600">{file.name}</span>
           <button
             onClick={() => onRemove(file.id)}
-            className="w-4 h-4 bg-red-500 text-white rounded-full flex items-center justify-center absolute -top-1.5 -right-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
+            className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-white opacity-0 shadow-sm transition-opacity group-hover:opacity-100"
           >
             <X size={10} />
           </button>
